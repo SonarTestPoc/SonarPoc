@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# Cypress test artifacts
+#cypress/screenshots/
+#cypress/videos/
+#cypress/downloads/
+
+# Cypress config & cache
+#.cypress_cache/
+#cypress.env.json
+#cypress/config/
+#cypress/reports/
+
+# Logs & temp files
+#*.log
+#*.tmp
+#*.swp
+#.DS_Store
+#Thumbs.db
+
+# IDE & editor settings
+.vscode/
+.idea/
+*.iml
+
+# Coverage reports (if using code coverage)
+#coverage/
+
+# Environment files
+#.env
+#.env.local
+#.env.*.local
