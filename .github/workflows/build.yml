@@ -27,9 +27,11 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        shell: pwsh  # Specify PowerShell as the shell
 
-      # Example of a run step using Bash
-      - name: Example Bash Command
-        run: |
-          echo "This runs in Bash"
-        shell: bash
+      # Uncomment the following lines if you wish to fail the job when the Quality Gate is red
+      # - name: SonarQube Quality Gate Check
+      #   uses: sonarsource/sonarqube-quality-gate-action@v1
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
