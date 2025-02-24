@@ -1,0 +1,6 @@
+projectKey=SonarPoc
+serverUrl=http://localhost:9001
+serverVersion=24.12.0.100206
+dashboardUrl=http://localhost:9001/dashboard?id=SonarPoc
+ceTaskId=ae5281e3-6a9a-4a58-ac80-740e4654c59b
+ceTaskUrl=http://localhost:9001/api/ce/task?id=ae5281e3-6a9a-4a58-ac80-740e4654c59b
