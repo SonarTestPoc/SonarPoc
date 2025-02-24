@@ -9,8 +9,8 @@ describe('User Authentication Tests', () => {
   });
 
   it('should login successfully with valid credentials', () => {
-    let username = 'user1'; // Hardcoded value (Issue)
-    let password = 'password1'; // Hardcoded value (Issue)
+    var username = 'user1'; // Hardcoded value (Issue)
+    var password = 'password1'; // Hardcoded value (Issue)
 
     cy.get('#username').type(username);
     cy.get('#password').type(password);
