@@ -5,23 +5,33 @@ on:
     branches:
       - main
 
-
 jobs:
   build:
-    name: Build and analyze
+    name: Build and Analyze
     runs-on: self-hosted
-    
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@v4
+          fetch-depth: 0  # Fetch all history for accurate analysis
+
+      - name: Set Up Java Environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'AdoptOpenJDK'
+          java-version: '11'
+
+      - name: Run SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: sonarsource/sonarqube-quality-gate-action@v1
+        shell: bash  # Specify the shell to use
+
+      # Uncomment the following lines if you wish to fail the job when the Quality Gate is red
+      # - name: SonarQube Quality Gate Check
+      #   uses: sonarsource/sonarqube-quality-gate-action@v1
       #   timeout-minutes: 5
       #   env:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
