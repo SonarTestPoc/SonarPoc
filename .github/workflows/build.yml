@@ -22,12 +22,17 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Run SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v4
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        shell: pwsh  # Specify PowerShell as the shell
+    - name: Run SonarQube Scan
+  uses: sonarsource/sonarqube-scan-action@v4
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+  with:
+    # Your action inputs here
+  run: |
+    # Your shell commands here
+  shell: pwsh  # Specify PowerShell as the shell
+
 
       # Uncomment the following lines if you wish to fail the job when the Quality Gate is red
       # - name: SonarQube Quality Gate Check
