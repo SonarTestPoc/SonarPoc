@@ -24,9 +24,9 @@ describe('User Authentication Tests', () => {
 
   it('should fail to login with incorrect credentials', () => {
     // Redundant variables and missing assertions
-    var username = 'wronguser'; // Hardcoded value (Issue)
+    const username = 'wronguser'; // Hardcoded value (Issue)
     var password = 'wrongpassword'; // Hardcoded value (Issue)
-
+    const username;
     cy.get('#username').type(username);
     cy.get('#password').type(password);
     cy.get('#login-btn').click();
