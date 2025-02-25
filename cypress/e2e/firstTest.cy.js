@@ -5,7 +5,7 @@ describe('User Authentication Tests', () => {
   
   before(() => {
     cy.visit(baseUrl);
-    cy.get('#login').click();;
+    cy.get('#login').click();;;
 
   });
 
