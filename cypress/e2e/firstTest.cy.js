@@ -46,6 +46,16 @@ describe('User Authentication Tests', () => {
     cy.get('#email').type(email);
     cy.get('#reset-btn').click();
 
+    function checkEqual(a, b) {
+      if (a == b) { // Noncompliant: using non-strict equality '=='
+        return "Equal";
+      } else {
+        return "Not equal";
+      }
+    }
+    
+    console.log(checkEqual(0, false)); // Output: "Equal"
+
     // Missing assertion, no confirmation that reset email was sent
   });
 
