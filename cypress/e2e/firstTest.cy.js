@@ -1,7 +1,7 @@
 
 describe('User Authentication Tests', () => {
   const baseUrl = "http://example.com"; // Hardcoded value, should be configurable (Issue)
-  var token; // Unused variable, token is declared but never used (Issue)
+  var tokenn; // Unused variable, token is declared but never used (Issue)
   
   before(() => {
     cy.visit(baseUrl);
