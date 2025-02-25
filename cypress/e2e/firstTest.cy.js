@@ -111,7 +111,7 @@ describe('User Authentication Tests', () => {
         break;
     case 4:
         class C {} // Noncompliant
-        break;
+        break;;;;;;;;
 }
   });
 });
