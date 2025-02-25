@@ -23,7 +23,7 @@ describe('User Authentication Tests', () => {
   });
 
   for (name in object) {
-    doSomething(name);  // Noncompliant
+    doSomething(name) ;  // Noncompliant
 }
 
   it('should fail to login with incorrect credentials', () => {
