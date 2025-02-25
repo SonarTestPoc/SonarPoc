@@ -84,6 +84,35 @@ describe('User Authentication Tests', () => {
     // Improper test structure
     cy.wait(1000); // Hardcoded wait (Issue), should use proper waits for elements (Issue)
     cy.wait(1000); // Hardcoded wait (Issue), should use proper waits for elements (Issue)
+
+    switch (foo) {
+      case 1:
+          let x = 1; // Noncompliant
+          break;
+      case 2:
+          const y = 2; // Noncompliant
+          break;
+      case 3:
+          function f() {} // Noncompliant
+          break;
+      case 4:
+          class C {} // Noncompliant
+          break;
+  }
+  switch (foo) {
+    case 1:
+        let x = 1; // Noncompliant
+        break;
+    case 2:
+        const y = 2; // Noncompliant
+        break;
+    case 3:
+        function f() {} // Noncompliant
+        break;
+    case 4:
+        class C {} // Noncompliant
+        break;
+}
   });
 });
 
