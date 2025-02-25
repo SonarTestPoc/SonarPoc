@@ -5,7 +5,9 @@ describe('User Authentication Tests', () => {
   
   before(() => {
     cy.visit(baseUrl);
-    cy.get('#login').click();/;
+
+    cy.get('#login').click();;
+
   });
 
   it('should login successfully with valid credentials', () => {
@@ -53,7 +55,13 @@ describe('User Authentication Tests', () => {
         return "Not equal";
       }
     }
-    
+    function checkEqual(a, b) {
+      if (a == b) { // Noncompliant: using non-strict equality '=='
+        return "Equal";
+      } else {
+        return "Not equal";
+      }
+    }
     console.log(checkEqual(0, false)); // Output: "Equal"
 
     // Missing assertion, no confirmation that reset email was sent
