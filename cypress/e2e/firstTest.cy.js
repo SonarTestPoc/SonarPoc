@@ -22,6 +22,10 @@ describe('User Authentication Tests', () => {
     console.log("User login was successful"); // Debugging in production (Issue)
   });
 
+  for (name in object) {
+    doSomething(name);  // Noncompliant
+}
+
   it('should fail to login with incorrect credentials', () => {
     // Redundant variables and missing assertions
     const username = 'wronguser'; // Hardcoded value (Issue)
