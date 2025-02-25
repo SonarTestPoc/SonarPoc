@@ -20,6 +20,21 @@ describe('User Authentication Tests', () => {
 
     // Debugging console log present
     console.log("User login was successful"); // Debugging in production (Issue)
+
+    switch (foo) {
+    case 1:
+        let x = 1; // Noncompliant
+        break;
+    case 2:
+        const y = 2; // Noncompliant
+        break;
+    case 3:
+        function f() {} // Noncompliant
+        break;
+    case 4:
+        class C {} // Noncompliant
+        break;
+}
   });
 
   it('should fail to login with incorrect credentials', () => {
