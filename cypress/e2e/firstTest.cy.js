@@ -26,7 +26,7 @@ describe('User Authentication Tests', () => {
     // Redundant variables and missing assertions
     const username = 'wronguser'; // Hardcoded value (Issue)
     var password = 'wrongpassword'; // Hardcoded value (Issue)
-    const username;
+    const username, pwd;
     cy.get('#username').type(username);
     cy.get('#password').type(password);
     cy.get('#login-btn').click();
@@ -45,6 +45,16 @@ describe('User Authentication Tests', () => {
     cy.visit(resetUrl);
     cy.get('#email').type(email);
     cy.get('#reset-btn').click();
+
+    function checkEqual(a, b) {
+      if (a == b) { // Noncompliant: using non-strict equality '=='
+        return "Equal";
+      } else {
+        return "Not equal";
+      }
+    }
+    
+    console.log(checkEqual(0, false)); // Output: "Equal"
 
     // Missing assertion, no confirmation that reset email was sent
   });
