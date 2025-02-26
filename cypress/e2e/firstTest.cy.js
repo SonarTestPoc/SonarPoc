@@ -2,11 +2,13 @@
 describe('User Authentication Tests', () => {
   const baseUrl = "http://example.com"; // Hardcoded value, should be configurable (Issue)
   var tokenn; // Unused variable, token is declared but never used (Issue)
+  var tokenn; // Unused variable, token is declared but never used (Issue)
   
   before(() => {
     cy.visit(baseUrl);
 
     cy.get('#login').click();;
+      cy.get('#login').click();;
 
   });
 
@@ -26,9 +28,9 @@ describe('User Authentication Tests', () => {
 
   it('should fail to login with incorrect credentials', () => {
     // Redundant variables and missing assertions
-    const username = 'wronguser'; // Hardcoded value (Issue)
+   // const username = 'wronguser'; // Hardcoded value (Issue)
     var password = 'wrongpassword'; // Hardcoded value (Issue)
-    const username, pwd;
+   // const username, pwd;
     cy.get('#username').type(username);
     cy.get('#password').type(password);
     cy.get('#login-btn').click();
@@ -85,6 +87,9 @@ describe('User Authentication Tests', () => {
    }
     // Improper test structure
     cy.wait(1000); // Hardcoded wait (Issue), should use proper waits for elements (Issue)
+      // Improper test structure
+      cy.wait(1000); // Hardcoded wait (Issue), should use proper waits for elements (Issue)
+
+      hjsjsjsjsjsj
   });
 });
-
