@@ -8,6 +8,7 @@ describe('User Authentication Tests', () => {
     cy.visit(baseUrl);
 
     cy.get('#login').click();;
+      cy.get('#login').click();;
 
   });
 
